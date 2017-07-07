@@ -1,0 +1,37 @@
+unit Unit13;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm13 = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form13: TForm13;
+
+implementation
+uses uAccess;
+{$R *.dfm}
+
+
+procedure TForm13.Button1Click(Sender: TObject);
+var
+   msg: string;
+begin
+   if not CreateDB('c:\a.mdb',msg)  then
+   begin
+      showmessage(msg);
+   end;
+end;
+
+end.

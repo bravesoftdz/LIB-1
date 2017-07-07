@@ -1,0 +1,8 @@
+unit uConst;
+
+interface
+const
+  NULL = '';
+implementation
+
+end.

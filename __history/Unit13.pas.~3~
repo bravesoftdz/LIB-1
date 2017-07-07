@@ -1,0 +1,42 @@
+unit Unit13;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, WideStrings, SqlExpr, DB, ADODB;
+
+type
+  TfrmMain = class(TForm)
+    Button1: TButton;
+    Edit1: TEdit;
+    Label1: TLabel;
+    ADOConnection1: TADOConnection;
+    SQLConnection1: TSQLConnection;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMain: TfrmMain;
+
+implementation
+uses uAccess;
+{$R *.dfm}
+
+
+procedure TfrmMain.Button1Click(Sender: TObject);
+var
+   msg: string;
+begin
+
+   if not CreateDB('c:\a.mdb',msg)  then
+   begin
+      showmessage(msg);
+   end;
+end;
+
+end.
